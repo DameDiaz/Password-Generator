@@ -1,25 +1,38 @@
 //GIVEN I need a new, secure password
 //WHEN I click the button to generate a password
 //THEN I am presented with a series of prompts for password criteria
+//WHEN prompted for password criteria
+//THEN I select which criteria to include in the password
+
 var generateButton = document.querySelector("#generate");
 var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberChar = "0123456789";
-var specialChar = "#$%&'()*+,-./:;<=>?@[]^_`{|}~"
-
-
-
-
-
-//WHEN prompted for password criteria
-//THEN I select which criteria to include in the password
-
-
+var specialChar = "#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var passwordLength;
+var uppercaseCheck;
+var numberCheck;
+var specialCheck;
 
 
 //WHEN prompted for the length of the password
 //THEN I choose a length of at least 8 characters and no more than 128 characters
 
+function determineLength();
+ passwordLength = prompt("How many characters long would you like your password to be (has to be between 8-128 characters)");
+
+ if (passwordLength<8) {
+     alert("Password length must be a number between 8-128")
+ } else if (passwordLength>128) {
+     alert("Password length must be a number between 8-128")
+ } else if (isNaN(passwordLength)) {
+     alert("Password length must be a number between 8-128");
+     determineLength();
+ } else{
+    alert("The next three screens will ask you what types of characters you would like to be included in your password.\nIf you choose 'No' for all, your password will only contain lowercase letters.");
+    }
+ 
+ return passwordLength;
 
 
 
