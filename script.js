@@ -45,7 +45,7 @@ function generatePassword(){
             alert("Password length must be a number between 8-128 characters");
             determineLength();
           }else{
-          alert("The next four screens will ask you what types of characters you would like to be included in your password.");
+          alert("The next three screens will ask you what types of characters you would like to be included in your password. \nIf you choose 'No' for all, your password will only contain lowercase letters");
           }
           return passwordLength;
        }
@@ -170,6 +170,7 @@ if (uppercaseCheck && numberCheck && specialCheck){
  return password;
 
 
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -177,7 +178,6 @@ function writePassword() {
 
   passwordText.value = password;
   
-}
-
 // Add event listener to generate button
     generateBtn.addEventListener("click", writePassword);
+}
