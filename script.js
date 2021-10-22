@@ -18,8 +18,8 @@ var specialCheck;
 //WHEN prompted for the length of the password
 //THEN I choose a length of at least 8 characters and no more than 128 characters
 
-function determineLength();
- passwordLength = prompt("How many characters long would you like your password to be (has to be between 8-128 characters)");
+function determineLength() {
+ passwordLength = prompt("How many characters long would you like your password to be (between 8-128 characters)");
 
  if (passwordLength<8) {
      alert("Password length must be a number between 8-128")
@@ -33,12 +33,22 @@ function determineLength();
     }
  
  return passwordLength;
-
-
+}
 
 //WHEN asked for character types to include in the password
 //THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+function determineUppercase() {
+    uppercaseCheck = prompt("Do you want to include uppercase letters in you password? \n (Yes or No)");
+    uppercaseCheck = uppercaseCheck.toLowerCase();{
 
+        if (uppercaseCheck === null || uppercaseCheck === "") {
+            alert("Please answer Yes or No");
+            determineUppercase();
+
+        }else if (uppercaseCheck) {
+
+        }
+    }
 
 
 
