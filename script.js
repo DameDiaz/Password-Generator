@@ -21,7 +21,12 @@ function generatePassword(){
     console.log(specialCheck);
 
 
-//Function used to determine the length of the password
+// 1. Series of prompts with password criteria
+ 
+ 
+// 1a. Length of criteria of at least 8-128 characters
+
+
 function determineLength(){
   passwordLength = prompt("Choose how many characters long you'd like your password to be (between 8-128 characters): ");
 
@@ -40,7 +45,10 @@ function determineLength(){
     return passwordLength;
 }
 
-//Function used to determine whether the user wants to include uppercase characters in the password
+
+// Uppercase
+
+
 function determineUppercase(){
   uppercaseCheck = prompt("Do you want to include uppercase letters in your password? \n(Yes or No)");
     uppercaseCheck = uppercaseCheck.toLowerCase();
@@ -64,7 +72,7 @@ function determineUppercase(){
     return uppercaseCheck;
 }
 
-//Function used to determine whether the user wants to include numbers in the password
+// Determine Numbers
 function determineNumbers(){
   numberCheck = prompt("Do you want to include numbers in your password? \n(Yes or No)");
     numberCheck = numberCheck.toLowerCase();
@@ -88,7 +96,10 @@ function determineNumbers(){
     return numberCheck;
 }
 
-//Function used to determine whether the user wants to include special characters in the password
+
+// Special Characters
+
+
 function determineSpecial(){
   specialCheck = prompt("Do you want to include special characters in your password? \n(Yes or No)");
     specialCheck = specialCheck.toLowerCase();
@@ -111,9 +122,6 @@ function determineSpecial(){
     }
     return specialCheck;
 }
-
- //Function used to take all the input from the previous functions and generate a password using a random number generator and 
- //the charAt method 
 
 
 var characters = lowercaseChar;
